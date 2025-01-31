@@ -6,17 +6,18 @@ import { DataSource } from "./components/DataSource"
 import { UserInfo } from "./components/UserInfo"
 import { UserLoader } from "./components/UserLoader"
 import { ResourceLoader } from "./components/ResourceLoader"
+import { DataSourceWithRender } from "./components/DataSourceWithRender"
 
 const getServerData = (url: string) => async () => {
   const response = await axios.get(url)
   return response.data
 }
 
-const getLocalStorageData = (key) => () => {
+const getLocalStorageData = (key: string) => () => {
   return localStorage.getItem(key)
 }
 
-const Text = ({ message }) => <h1>{message}</h1>
+const Text = ({ message }: { message: string }) => <h1>{message}</h1>
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
       >
         <Text />
       </DataSource>
+      <DataSourceWithRender
+        getDataFunc={() => getServerData("users/2")}
+        render={(resource) => <UserInfo user={resource} />}
+      ></DataSourceWithRender>
     </>
   )
 }

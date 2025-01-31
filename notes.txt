@@ -1,3 +1,6 @@
+Taken from Lynda Shawn Wassell course React Design Patterns
+same as Udemy Adv React Design System, Design Patterns, Performance (CodeLicks Academy)
+
 I had to downgrade to node version 16
 higher versions did not work
 
@@ -24,3 +27,18 @@ uses DataSource in a different way.
 uses it to get an item in local storage. 
 to make this work, you have to set a localstorage item (message: 'Hi from localstorage!')
 
+DataSourceWithRender 
+from the udemy course
+another way to dynamically pass props to a component upon creation
+couldn't get this to work
+but still good as a reference/inspiration.
+
+______________________
+
+start server and client separately.
+
+server:
+node server.js (from root of project)
+
+client:
+npm run start
