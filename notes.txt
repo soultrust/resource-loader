@@ -1,0 +1,26 @@
+I had to downgrade to node version 16
+higher versions did not work
+
+*Data loaders*
+
+CurrentUserLoader 
+loads only one user and that one user is hard-coded.
+
+UserLoader 
+improves upon CurrentUserLoader
+loads one user by userId passed in as placeholder
+
+ResourceLoader
+improves upon UserLoader
+Loads any resource, not just users.
+Good stopping point for most applications.
+
+DataSource 
+goes further into abstraction
+passing in the async callback function
+
+DataSource (second instance)
+uses DataSource in a different way. 
+uses it to get an item in local storage. 
+to make this work, you have to set a localstorage item (message: 'Hi from localstorage!')
+

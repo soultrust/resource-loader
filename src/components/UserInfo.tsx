@@ -1,5 +1,16 @@
-export const UserInfo = ({ user }) => {
-  const { name, age, country, books } = user || {};
+import React from "react"
+
+type UserInfoProps = {
+  user: {
+    name: string
+    age: number
+    country: string
+    books: string[]
+  }
+}
+export const UserInfo = ({ user }: UserInfoProps) => {
+  const { name, age, country, books } = user || { user: {} }
+
   return user ? (
     <>
       <h2>{name}</h2>
@@ -14,5 +25,5 @@ export const UserInfo = ({ user }) => {
     </>
   ) : (
     <h1>Loading...</h1>
-  );
-};
+  )
+}
